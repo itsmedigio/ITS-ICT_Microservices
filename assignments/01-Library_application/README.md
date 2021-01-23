@@ -49,11 +49,13 @@ To see the logs click on the sidebar, go on observability logs, then settings, t
 You will need Helm and a Kubernetes installation (The one from Docker is okay)
 
 Open the **helm** folder and run ./deploy.sh [(What does this?)](https://github.com/sunnyvale-academy/ITS-ICT_Microservices/blob/master/labs/06-Install_infrastructure_components_on_K8S/README.md "(What does this script?)")
+
 Running ./delete.sh will remove everything created from the script above.
 
 You will see your containers creating by doing `kubectl get pods`
 
 Then go back and open **deployk8s** folder and run ./deploy.sh [(What does this?)](https://github.com/sunnyvale-academy/ITS-ICT_Microservices/tree/master/labs/07-Deploy_microservices_on_K8S "(What does this?)")
+
 Once again, run ./delete.sh to remove everything.
 
 **Note:** You need to run this delete to proceed to the next step
