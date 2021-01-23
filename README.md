@@ -1,5 +1,9 @@
 # ITS-ICT_Microservices
 
+## Assignments
+
+- [Library Microservice Solution](assignments/01-Library_application/README.md)
+
 ## Labs
 
 - [00 - Prerequisites](labs/00-Prerequisites/README.md)
@@ -24,7 +28,5 @@
 
 - [10 - Microservices monitoring](labs/10-Microservices_monitoring/README.md)
 
-## Assignments
 
-- [01 - Library application](assignments/01-Library_application/README.md)
 
