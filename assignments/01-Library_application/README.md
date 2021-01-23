@@ -8,7 +8,9 @@ The assignment consist in a series of Microservices that permits to manage a lib
 Specifically, you can call the APIs of this services by sending requests using Postman or similar software to this endpoints:
 
 [http://localhost:8102/libraryms/v2/book](http://localhost:8102/libraryms/v2/book "http://localhost:8102/libraryms/v2/book")
+
 [http://localhost:8103/libraryms/v2/borrow](http://localhost:8103/libraryms/v2/borrow "http://localhost:8103/libraryms/v2/borrow")
+
 [http://localhost:8104/libraryms/v2/customer](http://localhost:8104/libraryms/v2/customer "http://localhost:8104/libraryms/v2/customer")
 
 You can add, edit or remove books, customers and borrowings
