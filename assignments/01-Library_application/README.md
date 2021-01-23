@@ -84,8 +84,8 @@ To setup your app then open a terminal window, login to the CLI using `argocd lo
 
 
     argocd app create libraryms \
-        --repo https://github.com/YOUR_USERNAME/ITS-ICT_Microservices.git \
-        --path labs/07-Deploy_microservices_on_K8S \
+        --repo https://github.com/itsmedigio/ITS-ICT_Microservices.git \
+        --path assignments/01-Library_application/libraryms/deployk8s/ \
         --dest-server https://kubernetes.default.svc \
         --dest-namespace default \
         --auto-prune \
