@@ -1,0 +1,83 @@
+version: "3.7"
+services:
+  #
+  # Microservizio e porta => Book 8102, Borrow 8103, Customer 8104, Notification 8105
+  # 
+  # Book http://localhost:8102/libraryms/v2/book
+  book-ms: 
+    build:
+      context: ./book
+    container_name: book-ms
+    ports:
+      - "8102:8102"
+    depends_on:
+      - mongodb_db
+  # Borrow http://localhost:8103/libraryms/v2/borrow
+  borrow-ms:
+    build:
+      context: ./borrow
+    container_name: borrow-ms
+    ports:
+      - "8103:8103"
+    depends_on:
+      - mongodb_db
+  #Customer http://localhost:8104/libraryms/v2/customer
+  customer-ms:
+    build:
+      context: ./customer
+    container_name: customer-ms
+    ports:
+      - "8104:8104"
+    depends_on:
+      - mongodb_db
+  #MongoDB (non sono riuscito ad implementare Postgre)
+  mongodb_db:
+    image: mongo:latest
+    container_name: libraryms-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb_data:/data/db
+
+  #
+  # Notification 8105 http://localhost:8105/notification-service/
+  #
+  
+  notification-ms:
+    build:
+      context: ./notification
+    container_name: notification-ms
+    ports:
+      - "8105:8105"
+    depends_on:
+      - kafka
+
+  zookeeper:
+    image: zookeeper
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      zk_id: "1"
+
+  kafka:
+    image: bitnami/kafka
+    container_name: kafka
+    hostname: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
+      ALLOW_PLAINTEXT_LISTENER: "yes"
+
+  
+
+
+volumes:
+ mongodb_data: {}
+ postgres_data: {}

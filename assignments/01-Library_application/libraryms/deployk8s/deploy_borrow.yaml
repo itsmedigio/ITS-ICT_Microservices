@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: borrow-deployment
+  labels:
+    app: borrow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: borrow
+  template:
+    metadata:
+      labels:
+        app: borrow
+    spec:
+      containers:
+        - name: borrow-ms
+          image: itsmedigio/borrow:1.0-SNAPSHOT
+          ports:
+          - containerPort: 8103
+          volumeMounts:
+          - mountPath: /app/config
+            readOnly: true
+            name: borrow-conf
+      volumes:
+      - name: borrow-conf
+        configMap:
+          name: borrow-conf
+          items:
+            - key: application.properties
+              path: application.properties
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: borrow-service
+  labels:
+    app: borrow
+spec:
+  type: NodePort
+  ports:
+    - name: http
+      nodePort: 32103
+      port: 8103
+      targetPort: 8103
+  selector:
+    app: borrow
