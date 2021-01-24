@@ -61,5 +61,5 @@ data:
     management.endpoint.info.enabled=true
     management.security.enabled=false
 metadata:
-  name: book-conf
+  name: notification-conf
   namespace: default
