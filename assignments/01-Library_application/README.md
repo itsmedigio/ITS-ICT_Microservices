@@ -46,6 +46,7 @@ To see the logs click on the sidebar, go on observability logs, then settings, t
 
 ## Deploying my service under Kubernetes
 
+**On MacOS be sure to enable port forwarding using** `sudo sysctl -w net.inet.ip.forwarding=1`
 You will need Helm and a Kubernetes installation (The one from Docker is okay)
 
 Open the **helm** folder and run ./deploy.sh [(What does this?)](https://github.com/sunnyvale-academy/ITS-ICT_Microservices/blob/master/labs/06-Install_infrastructure_components_on_K8S/README.md "(What does this script?)")
@@ -53,6 +54,8 @@ Open the **helm** folder and run ./deploy.sh [(What does this?)](https://github.
 Running ./delete.sh will remove everything created from the script above.
 
 You will see your containers creating by doing `kubectl get pods`
+
+**Microservices in kubernetes and ArgoCD will run on localhost:32102,32103,32104,32105!**
 
 Then go back and open **deployk8s** folder and run ./deploy.sh [(What does this?)](https://github.com/sunnyvale-academy/ITS-ICT_Microservices/tree/master/labs/07-Deploy_microservices_on_K8S "(What does this?)")
 
