@@ -23,7 +23,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v1.1.0
         with:
-          path: assignments/01-Library_application/libraryms/book/
+          path: assignments/01-Library_application/libraryms/book
           dockerfile: assignments/01-Library_application/libraryms/book/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
@@ -51,7 +51,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v1.1.0
         with:
-          path: assignments/01-Library_application/libraryms/borrow/
+          path: assignments/01-Library_application/libraryms/borrow
           dockerfile: assignments/01-Library_application/libraryms/borrow/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
@@ -79,7 +79,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v1.1.0
         with:
-          path: assignments/01-Library_application/libraryms/customer/
+          path: assignments/01-Library_application/libraryms/customer
           dockerfile: assignments/01-Library_application/libraryms/customer/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
@@ -106,7 +106,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v1.1.0
         with:
-          path: assignments/01-Library_application/libraryms/notification/
+          path: assignments/01-Library_application/libraryms/notification
           dockerfile: assignments/01-Library_application/libraryms/notification/Dockerfile
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
