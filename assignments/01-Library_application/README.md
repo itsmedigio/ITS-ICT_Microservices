@@ -57,7 +57,7 @@ You will see your containers creating by doing `kubectl get pods`
 
 **Microservices in kubernetes and ArgoCD will run on localhost:32102,32103,32104,32105!**
 
-**To start kibana, use kubectl port-forward svc/kibana --address 0.0.0.0 5601:5601 and connect to localhost:5601
+**To start Kibana, use kubectl port-forward svc/kibana --address 0.0.0.0 5601:5601 and connect to localhost:5601**
 
 Then go back and open **deployk8s** folder and run ./deploy.sh [(What does this?)](https://github.com/sunnyvale-academy/ITS-ICT_Microservices/tree/master/labs/07-Deploy_microservices_on_K8S "(What does this?)")
 
